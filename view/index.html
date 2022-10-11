@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animals</title>
+    <link rel="stylesheet" href="/styles/mystyle.css">
+</head>
+<body>
+    <h1>Katie's rare animals</h1>
+    <div class="header">
+        <div>
+        <button type="button" class="button" id="addAnimalButton">Add animal</button>
+        <button type="button" class="button" id="showAllAnimalsButton"> Show all animals</button>
+        </div>
+        <form id="animalSearchForm">
+            <input type="search" id="speciesField" class="inputField" placeholder="Search animal" required>
+            <button type="submit" class="button">Search</button>
+        </form>
+    </div>
+
+    <!-- Advanced search starts here -->
+    <aside class="searchPanel" id="searchPanel">
+        <span class="panelText" id="panelText">A D V A N C E D &nbsp;&nbsp; S E A R C H </span>
+        <form id="searchForm" class="searchForm">
+            <div class="closeCross" id="closeCross">X</div>
+
+            <label class="searchFormLabel" for="gender"></label>Gender<input type="text" id="gender" class="searchFormField">
+
+            <label class="searchFormLabel" for="color"></label>Color<input type="text" id="color" class="searchFormField">
+
+            <label class="searchFormLabel" for="habitat"></label>Habitat<input type="text" id="habitat" class="searchFormField">
+
+            <label class="searchFormLabel" for="observationDate"></label>Observation date<input type="date" id="observationDate" class="searchFormField">
+
+            <br><br>
+
+            <div class="searchFormPanel">
+                <button type="reset" class="searchFormButton">Reset</button>
+                <button type="submit" class="searchFormButton">Apply</button>
+            </div>
+        </form>
+    </aside>
+    <!-- Advanced search ends here -->
+
+    <!-- Add animal dialog start -->
+    <dialog id="animalDialog">
+        <form method="dialog" id="animalDialogForm">
+            <fieldset>
+                <legend>Add new Animal</legend>
+                <label for="speciesfield">Species Name:</label><input type="text" class="inputField dialogField" id="speciesfield" placeholder="Type in species name" required>
+
+                <label for="genderfield">Gender:</label><input type="text" class="inputField dialogField" id="genderfield" placeholder="Type in gender" required>
+
+                <label for="colorfield">Color:</label><input type="text" class="inputField dialogField" id="colorfield" placeholder="Type in color" required>
+
+                <label for="habitatfield">Habitat</label><input type="text" class="inputField dialogField" id="habitatfield" placeholder="Type in habitat" required>
+
+                <label for="observationfield">Observation Date:</label><input type="date" class="inputField dialogField" id="observationfield" required>
+                <br><br>
+
+                <div class="dialogBtnsPanel">
+                    <button type="button" id="cancelButton" class="button">Cancel</button>
+                    <button type="submit" id="saveButton" class="button">Save</button>
+                </div>
+            </fieldset>
+        </form>
+    </dialog>
+    <!--- Add animal dialog end -->
+
+    <!--- Delete confirmation dialog start --->
+    <dialog id="confirmDialog">
+        <form method="dialog" id="confirmDialogForm">
+            <fieldset>
+                <legend>Delete animal?</legend>
+                Do you really want to delete this animal?
+                <br><br>
+                <div class="dialogBtnsPanel">
+                    <button type="submit" class="button">Yes</button>
+                    <button type="button" class="button" id="cancelConfirmBtn">No</button>
+                </div>
+            </fieldset>
+        </form>
+    </dialog>
+    <!-- Delete confirmation dialog end -->
+
+    <!-- Hidden form field-->
+    <form>
+        <input type="hidden" id="hiddenSpeciesField">
+    </form>
+
+    <div id="searchResult"></div>
+
+    <div id="snackbar">Some message will arrive</div>
+
+    <script type="module">
+        import Model from "/models/model.js"
+        import Controller from "../controllers/controller.js"
+        import View from "./view.js"
+
+        window.onload = function () {
+            const model = new Model();
+            const controller = new Controller();
+            const view = new View(controller);
+            controller.initialize(model, view);
+        }
+    </script>
+
+    
+</body>
+</html>

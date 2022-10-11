@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.searchform {
+    padding: 10px;
+ }
+ 
+ .header {
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 25px;
+     margin-right: 35px;
+ }
+ 
+ .inputField,
+ .button {
+     padding: 10px;
+     border-radius: 5px;
+ }
+ 
+ .button:hover {
+     cursor: pointer;
+     background-color: rgb(211, 206, 206); 
+ }
+ 
+ #dialogForm {
+     width: 300px;
+     border: 0;
+     box-shadow: 10px 10px 5px gray;
+ }
+ 
+ .dialogField {
+     width: 95%;
+ }
+ 
+ .dialogBtnsPanel {
+     display: flex;
+     justify-content: space-between;
+ }
+ 
+ label {
+     display: block;
+     margin-top: 15px;
+     margin-bottom: 5px;;
+ }
+
+ #animalDialog {
+    width: 25%;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+/* Search panel start */
+
+.searchPanel {
+    position: fixed;
+    background-color: #9118c0;
+    height: 100vh;
+    width: 30px;
+    right: 0px;
+    top: 0px;
+    transition: width 2s;
+    display: flex;
+}
+
+.searchPanelAnim {
+    width: 300px;
+}
+
+.panelText {
+    position: relative;
+    color: white;
+    top: 20px;
+    left: 5px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    height: 95vh;
+    cursor: pointer;
+}
+
+.closeCross {
+    text-align: right;
+    color: white;
+    cursor: pointer;
+}
+
+.searchForm {
+    padding-left: 20px;
+    padding-top: 100px;
+}
+
+.searchFormLabel {
+    display: block;
+    color: white;
+}
+
+.searchFormField {
+    width: 225px;
+}
+
+.searchFormPanel {
+    display: flex;
+}
+/* Search panel end */
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    width: 20%;
+    margin: 25px;
+    background-color: rgb(218, 218, 218);
+    justify-content: center;
+    display: inline-block;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .cardHeader {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #9118c0;
+  }
+
+  .cardText {
+    font-style: italic;
+  }
